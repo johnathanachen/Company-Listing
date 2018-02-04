@@ -32,8 +32,6 @@ class CompaniesController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "plus").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleAddCompany))
         
-        setupNavigationStyle()
-        
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -51,7 +49,7 @@ class CompaniesController: UITableViewController {
         
         let createCompanyController = CreateCompanyController()
         
-        let navController = UINavigationController(rootViewController: createCompanyController)
+        let navController = CustomNavigationController(rootViewController: createCompanyController)
         
         present(navController, animated: true, completion: nil)
         

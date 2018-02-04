@@ -8,20 +8,37 @@
 
 import UIKit
 
-extension UIViewController {
+class CreateCompanyController: UIViewController {
     
-    func setupNavigationStyle() {
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Name"
+        label.backgroundColor = .red
+        // Enable Autolayout
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    override func viewDidLoad() {
+        
+        setupUI()
+        
+        navigationItem.title = "Create Company"
+        view.backgroundColor = UIColor.darkBlue
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         
     }
     
-}
-
-class CreateCompanyController: UIViewController {
-    override func viewDidLoad() {
-        
-        view.backgroundColor = .yellow
-        setupNavigationStyle()
-        
+    private func setupUI() {
+        view.addSubview(nameLabel)
+        nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    @objc func handleCancel() {
+        dismiss(animated: true, completion: nil)
     }
     
     
