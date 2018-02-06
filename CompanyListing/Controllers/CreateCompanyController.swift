@@ -8,9 +8,13 @@
 
 import UIKit
 
+protocol CreateCompanyControllerDelegate {
+    func didAddCompany(company: Company)
+}
+
 class CreateCompanyController: UIViewController {
     
-    var companiesController: CompaniesController?
+    var delegate: CreateCompanyControllerDelegate?
     
     let nameLabel: UILabel = {
         let label = UILabel()
@@ -46,7 +50,7 @@ class CreateCompanyController: UIViewController {
             
             let company = Company(name: name, founded: Date())
             
-            self.companiesController?.addCompany(company: company)
+            self.delegate?.didAddCompany(company: company)
         }
         
         
