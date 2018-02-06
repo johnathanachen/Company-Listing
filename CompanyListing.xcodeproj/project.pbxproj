@@ -41,6 +41,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B808A27B20278F800072A869 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B828B557202749E900CB3D71 /* AppDelegate.swift */,
+				B828B55E202749E900CB3D71 /* Assets.xcassets */,
+				B828B560202749E900CB3D71 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B808A27C20278F980072A869 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B828B56B20277B9400CB3D71 /* Company.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B808A27D20278F9F0072A869 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B828B5692027599D00CB3D71 /* UIColor+theme.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B808A27E20278FAF0072A869 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B828B559202749E900CB3D71 /* CompaniesController.swift */,
+				B808A27920277F4D0072A869 /* CreateCompanyController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B808A27F20278FBB0072A869 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B828B55B202749E900CB3D71 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B828B54B202749E900CB3D71 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +103,12 @@
 		B828B556202749E900CB3D71 /* CompanyListing */ = {
 			isa = PBXGroup;
 			children = (
-				B828B557202749E900CB3D71 /* AppDelegate.swift */,
-				B828B559202749E900CB3D71 /* CompaniesController.swift */,
-				B808A27920277F4D0072A869 /* CreateCompanyController.swift */,
-				B828B55B202749E900CB3D71 /* Main.storyboard */,
-				B828B55E202749E900CB3D71 /* Assets.xcassets */,
-				B828B560202749E900CB3D71 /* LaunchScreen.storyboard */,
+				B808A27C20278F980072A869 /* Model */,
+				B808A27F20278FBB0072A869 /* View */,
+				B808A27E20278FAF0072A869 /* Controllers */,
+				B808A27B20278F800072A869 /* Supporting Files */,
 				B828B563202749E900CB3D71 /* Info.plist */,
-				B828B5692027599D00CB3D71 /* UIColor+theme.swift */,
-				B828B56B20277B9400CB3D71 /* Company.swift */,
+				B808A27D20278F9F0072A869 /* Extensions */,
 			);
 			path = CompanyListing;
 			sourceTree = "<group>";

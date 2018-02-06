@@ -10,6 +10,8 @@ import UIKit
 
 class CreateCompanyController: UIViewController {
     
+    var companiesController: CompaniesController?
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
@@ -32,6 +34,21 @@ class CreateCompanyController: UIViewController {
         navigationItem.title = "Create Company"
         view.backgroundColor = UIColor.darkBlue
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleSave))
+        
+    }
+    
+    @objc private func handleSave() {
+        print("Trying to save companuy..")
+        
+        dismiss(animated: true) {
+            guard let name = self.nameTextField.text else { return }
+            
+            let company = Company(name: name, founded: Date())
+            
+            self.companiesController?.addCompany(company: company)
+        }
+        
         
     }
     
