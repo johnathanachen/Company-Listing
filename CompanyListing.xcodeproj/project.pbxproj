@@ -14,7 +14,8 @@
 		B828B55F202749E900CB3D71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828B55E202749E900CB3D71 /* Assets.xcassets */; };
 		B828B562202749E900CB3D71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B828B560202749E900CB3D71 /* LaunchScreen.storyboard */; };
 		B828B56A2027599D00CB3D71 /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828B5692027599D00CB3D71 /* UIColor+theme.swift */; };
-		B828B56C20277B9400CB3D71 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828B56B20277B9400CB3D71 /* Company.swift */; };
+		B84EB301202A5C820025035B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84EB300202A5C820025035B /* CoreDataManager.swift */; };
+		B8829B8E202A205D0017E3C7 /* CompanyListingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8829B8C202A205D0017E3C7 /* CompanyListingModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		B828B561202749E900CB3D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B828B563202749E900CB3D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B828B5692027599D00CB3D71 /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
-		B828B56B20277B9400CB3D71 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		B84EB300202A5C820025035B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B8829B8D202A205D0017E3C7 /* CompanyListingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyListingModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,8 @@
 		B808A27C20278F980072A869 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B828B56B20277B9400CB3D71 /* Company.swift */,
+				B8829B8C202A205D0017E3C7 /* CompanyListingModel.xcdatamodeld */,
+				B84EB300202A5C820025035B /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,11 +188,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84EB301202A5C820025035B /* CoreDataManager.swift in Sources */,
+				B8829B8E202A205D0017E3C7 /* CompanyListingModel.xcdatamodeld in Sources */,
 				B828B56A2027599D00CB3D71 /* UIColor+theme.swift in Sources */,
 				B828B55A202749E900CB3D71 /* CompaniesController.swift in Sources */,
 				B808A27A20277F4D0072A869 /* CreateCompanyController.swift in Sources */,
 				B828B558202749E900CB3D71 /* AppDelegate.swift in Sources */,
-				B828B56C20277B9400CB3D71 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +378,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B8829B8C202A205D0017E3C7 /* CompanyListingModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B8829B8D202A205D0017E3C7 /* CompanyListingModel.xcdatamodel */,
+			);
+			currentVersion = B8829B8D202A205D0017E3C7 /* CompanyListingModel.xcdatamodel */;
+			path = CompanyListingModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B828B54C202749E900CB3D71 /* Project object */;
 }
