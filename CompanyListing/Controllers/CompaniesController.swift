@@ -11,6 +11,14 @@ import CoreData
 
 class CompaniesController: UITableViewController, CreateCompanyControllerDelegate {
     
+    func didEditCompany(company: Company) {
+        // update tableview
+        let row = companies.index(of: company)
+        let reloadIndexPath = IndexPath(row: row!, section: 0)
+        tableView.reloadRows(at: [reloadIndexPath], with: .middle)
+    }
+    
+    
     func didAddCompany(company: Company) {
         companies.append(company)
         
@@ -41,12 +49,22 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
             
             
         }
+        deleteAction.backgroundColor = UIColor.lightRed
         
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (_, indexPath) in
-            print("Editing company...")
-        }
-        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editHandlerFunction)
+        editAction.backgroundColor = UIColor.darkBlue
         return [deleteAction, editAction]
+    }
+    
+    
+    func editHandlerFunction(action: UITableViewRowAction, indexPath: IndexPath) {
+        print("Editing copany in separate function")
+        
+        let editCompanyController = CreateCompanyController()
+        editCompanyController.delegate = self
+        editCompanyController.company = companies[indexPath.row]
+        let navController = CustomNavigationController(rootViewController: editCompanyController)
+        present(navController, animated: true, completion: nil)
     }
     
     private func fetchCompanies() {

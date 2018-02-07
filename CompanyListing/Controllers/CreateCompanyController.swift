@@ -11,9 +11,16 @@ import CoreData
 
 protocol CreateCompanyControllerDelegate {
     func didAddCompany(company: Company)
+    func didEditCompany(company: Company)
 }
 
 class CreateCompanyController: UIViewController {
+    
+    var company: Company? {
+        didSet {
+            nameTextField.text = company?.name
+        }
+    }
     
     var delegate: CreateCompanyControllerDelegate?
     
@@ -32,11 +39,16 @@ class CreateCompanyController: UIViewController {
         return textField
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.title = company == nil ? "Create Company" : "Edit Company"
+    }
+    
     override func viewDidLoad() {
         
         setupUI()
         
-        navigationItem.title = "Create Company"
         view.backgroundColor = UIColor.darkBlue
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleSave))
@@ -44,8 +56,30 @@ class CreateCompanyController: UIViewController {
     }
     
     @objc private func handleSave() {
-        print("Trying to save companuy..")
+        if company == nil {
+            createCompany()
+        } else {
+            saveCompanyChanges()
+        }
         
+    }
+    
+    private func saveCompanyChanges() {
+        let context = CoreDataManager.shared.presistentContainer.viewContext
+        company?.name = nameTextField.text
+        
+        do {
+          try context.save()
+            dismiss(animated: true, completion: {
+                self.delegate?.didEditCompany(company: self.company!)
+            })
+          
+        } catch let saveError {
+            print("Failed to save copmany changes", saveError )
+        }
+    }
+    
+    private func createCompany() {
         let context = CoreDataManager.shared.presistentContainer.viewContext
         
         let company = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
@@ -64,17 +98,6 @@ class CreateCompanyController: UIViewController {
         } catch let saveError {
             print("Error saving \(saveError)")
         }
-        
-        
-//        dismiss(animated: true) {
-//            guard let name = self.nameTextField.text else { return }
-//
-//            let company = Company(name: name, founded: Date())
-//
-//            self.delegate?.didAddCompany(company: company)
-//        }
-        
-        
     }
     
     private func setupUI() {
