@@ -93,7 +93,7 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
         
         fetchCompanies()
         
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "TEST ADD", style: .plain, target: self, action: #selector(addCompany))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(handleReset))
         
         view.backgroundColor = .white
         
@@ -120,6 +120,25 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
         return 50
     }
     
+    @objc private func handleReset() {
+        print("Attemping to delete all core data object")
+        
+        let context = CoreDataManager.shared.presistentContainer.viewContext
+        
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: Company.fetchRequest())
+        
+        do {
+            try context.execute(batchDeleteRequest)
+            companies.removeAll()
+            tableView.reloadData()
+            
+        } catch let deleteError {
+            print("Failed to deltee object from Core Data:", deleteError)
+        }
+        
+        
+    }
+    
     @objc func handleAddCompany() {
         print("Adding company")
         
@@ -138,10 +157,29 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
         
         let company = companies[indexPath.row]
         
-        cell.textLabel?.text = company.name
+        if let name = company.name, let founded = company.founded {
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd, yyyy"
+            
+            let foundedDateString = dateFormatter.string(from: founded)
+            
+            let dateString = "\(name) - Founded: \(foundedDateString)"
+            
+            cell.textLabel?.text = dateString
+            
+        } else {
+            cell.textLabel?.text = company.name
+        }
+        
         cell.backgroundColor = .tealColor
         cell.textLabel?.textColor = .white
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        cell.imageView?.image = #imageLiteral(resourceName: "select_photo_empty")
+        
+        if let imageData = company.imageData {
+            cell.imageView?.image = UIImage(data: imageData)
+        }
         
         return cell
     }
