@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B808A27A20277F4D0072A869 /* CreateCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B808A27920277F4D0072A869 /* CreateCompanyController.swift */; };
+		B80AE2F3202E304900A61C22 /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80AE2F2202E304900A61C22 /* EmployeesController.swift */; };
 		B828B558202749E900CB3D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828B557202749E900CB3D71 /* AppDelegate.swift */; };
 		B828B55A202749E900CB3D71 /* CompaniesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828B559202749E900CB3D71 /* CompaniesController.swift */; };
 		B828B55D202749E900CB3D71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B828B55B202749E900CB3D71 /* Main.storyboard */; };
@@ -15,11 +16,17 @@
 		B828B562202749E900CB3D71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B828B560202749E900CB3D71 /* LaunchScreen.storyboard */; };
 		B828B56A2027599D00CB3D71 /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828B5692027599D00CB3D71 /* UIColor+theme.swift */; };
 		B84EB301202A5C820025035B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84EB300202A5C820025035B /* CoreDataManager.swift */; };
+		B8593FE1202D3860003D8274 /* CompaniesController+CreateCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8593FE0202D3860003D8274 /* CompaniesController+CreateCompany.swift */; };
+		B8593FE3202D3993003D8274 /* CompaniesController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8593FE2202D3993003D8274 /* CompaniesController+UITableView.swift */; };
+		B85FD4F1202CF52400E7F1C9 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85FD4F0202CF52400E7F1C9 /* CompanyCell.swift */; };
 		B8829B8E202A205D0017E3C7 /* CompanyListingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8829B8C202A205D0017E3C7 /* CompanyListingModel.xcdatamodeld */; };
+		B8A4141F202E4C7F003D8E1E /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4141E202E4C7F003D8E1E /* UIViewController+Helper.swift */; };
+		B8A41423202E4E17003D8E1E /* CreateEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A41422202E4E17003D8E1E /* CreateEmployeeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B808A27920277F4D0072A869 /* CreateCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyController.swift; sourceTree = "<group>"; };
+		B80AE2F2202E304900A61C22 /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
 		B828B554202749E900CB3D71 /* CompanyListing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompanyListing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B828B557202749E900CB3D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B828B559202749E900CB3D71 /* CompaniesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesController.swift; sourceTree = "<group>"; };
@@ -29,7 +36,12 @@
 		B828B563202749E900CB3D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B828B5692027599D00CB3D71 /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
 		B84EB300202A5C820025035B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B8593FE0202D3860003D8274 /* CompaniesController+CreateCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+CreateCompany.swift"; sourceTree = "<group>"; };
+		B8593FE2202D3993003D8274 /* CompaniesController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+UITableView.swift"; sourceTree = "<group>"; };
+		B85FD4F0202CF52400E7F1C9 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		B8829B8D202A205D0017E3C7 /* CompanyListingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyListingModel.xcdatamodel; sourceTree = "<group>"; };
+		B8A4141E202E4C7F003D8E1E /* UIViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
+		B8A41422202E4E17003D8E1E /* CreateEmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +77,8 @@
 		B808A27D20278F9F0072A869 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B8593FE2202D3993003D8274 /* CompaniesController+UITableView.swift */,
+				B8593FE0202D3860003D8274 /* CompaniesController+CreateCompany.swift */,
 				B828B5692027599D00CB3D71 /* UIColor+theme.swift */,
 			);
 			path = Extensions;
@@ -75,6 +89,8 @@
 			children = (
 				B828B559202749E900CB3D71 /* CompaniesController.swift */,
 				B808A27920277F4D0072A869 /* CreateCompanyController.swift */,
+				B80AE2F2202E304900A61C22 /* EmployeesController.swift */,
+				B8A41422202E4E17003D8E1E /* CreateEmployeeController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -83,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				B828B55B202749E900CB3D71 /* Main.storyboard */,
+				B85FD4F0202CF52400E7F1C9 /* CompanyCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,8 +129,17 @@
 				B808A27B20278F800072A869 /* Supporting Files */,
 				B828B563202749E900CB3D71 /* Info.plist */,
 				B808A27D20278F9F0072A869 /* Extensions */,
+				B8A41421202E4C8B003D8E1E /* Helpers */,
 			);
 			path = CompanyListing;
+			sourceTree = "<group>";
+		};
+		B8A41421202E4C8B003D8E1E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B8A4141E202E4C7F003D8E1E /* UIViewController+Helper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +169,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = JCSwifty;
 				TargetAttributes = {
 					B828B553202749E900CB3D71 = {
@@ -188,10 +214,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A4141F202E4C7F003D8E1E /* UIViewController+Helper.swift in Sources */,
+				B8A41423202E4E17003D8E1E /* CreateEmployeeController.swift in Sources */,
 				B84EB301202A5C820025035B /* CoreDataManager.swift in Sources */,
 				B8829B8E202A205D0017E3C7 /* CompanyListingModel.xcdatamodeld in Sources */,
 				B828B56A2027599D00CB3D71 /* UIColor+theme.swift in Sources */,
+				B8593FE1202D3860003D8274 /* CompaniesController+CreateCompany.swift in Sources */,
+				B85FD4F1202CF52400E7F1C9 /* CompanyCell.swift in Sources */,
 				B828B55A202749E900CB3D71 /* CompaniesController.swift in Sources */,
+				B8593FE3202D3993003D8274 /* CompaniesController+UITableView.swift in Sources */,
+				B80AE2F3202E304900A61C22 /* EmployeesController.swift in Sources */,
 				B808A27A20277F4D0072A869 /* CreateCompanyController.swift in Sources */,
 				B828B558202749E900CB3D71 /* AppDelegate.swift in Sources */,
 			);
@@ -233,6 +265,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -240,6 +273,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -290,6 +324,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -297,6 +332,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
